@@ -30,7 +30,7 @@ const LoadingScreen = ({ progress, isFinished }) => {
         <div className="hy-symbol-busy">囍</div>
       </div>
       <div className="loading-progress-container">
-        <p className="loading-text">Đang chuẩn bị... {progress}%</p>
+        <p className="loading-text">Loading... {progress}%</p>
         <div className="loading-bar-bg">
           <div className="loading-bar-fill" style={{ width: `${progress}%` }}></div>
         </div>
@@ -87,7 +87,11 @@ const MusicPlayer = () => {
         className={`music-toggle-new ${isPlaying ? "playing" : ""}`}
         onClick={togglePlay}
       >
-        {isPlaying ? "🎵" : "🔇"}
+        <img
+          src={`${import.meta.env.BASE_URL}play-icon-28.png`}
+          alt="Music toggle"
+          style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+        />
       </button>
     </div>
   );
