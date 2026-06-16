@@ -22,7 +22,7 @@ export const config = {
     mother: "Trần Thị Phương Mai", // Điền tên Mẹ cô dâu
     address: "Phường Trấn Biên, TP.Đồng Nai"
   },
-  weddingDate: "2026-11-29T18:00:00", // Using 2026 to keep countdown active
+  weddingDate: "2026-11-28T11:00:00", // Using 2026 to keep countdown active
   events: [
     {
       title: "HÔN LỄ NHÀ GÁI",
