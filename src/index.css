@@ -92,4 +92,13 @@ section {
   :root {
     --spacing-lg: 2rem;
   }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    white-space: nowrap !important;
+    font-size: clamp(1.5rem, 5.5vw, 2.5rem) !important;
+    letter-spacing: 1px !important;
+  }
 }

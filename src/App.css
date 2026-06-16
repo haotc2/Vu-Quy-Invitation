@@ -208,8 +208,8 @@ body {
 }
 
 .music-toggle-new {
-  width: 60px;
-  height: 60px;
+  width: clamp(55px, 6vw, 90px);
+  height: clamp(55px, 6vw, 90px);
   border-radius: 50%;
   border: none;
   background-color: transparent;
@@ -468,6 +468,10 @@ body {
   text-transform: uppercase;
 }
 
+.mobile-break {
+  display: none;
+}
+
 .classic-ceremony-time {
   color: #777;
   font-size: 1.3rem;
@@ -476,7 +480,11 @@ body {
 
 @media (max-width: 768px) {
   .classic-announce-text {
-    font-size: 0.9rem;
+    font-size: clamp(0.5rem, 3.5vw, 0.9rem);
+  }
+
+  .mobile-break {
+    display: block;
   }
 
   .classic-ceremony-time {
@@ -486,15 +494,31 @@ body {
 
 /* Classic Date Row */
 .classic-date-row {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr auto auto auto 1fr;
   align-items: center;
   margin: 2rem 0;
   color: #777;
+  width: 100%;
 }
 
 .classic-date-side {
   font-size: 1rem;
+  white-space: nowrap;
+}
+
+.classic-day-short {
+  display: none;
+}
+
+.classic-date-side:first-child {
+  justify-self: end;
+  text-align: right;
+}
+
+.classic-date-side:last-child {
+  justify-self: start;
+  text-align: left;
 }
 
 .classic-date-divider {
@@ -528,6 +552,14 @@ body {
 @media (max-width: 768px) {
   .classic-date-side {
     font-size: 0.7rem;
+  }
+
+  .classic-day-full {
+    display: none;
+  }
+
+  .classic-day-short {
+    display: inline;
   }
 
   .classic-date-divider {
