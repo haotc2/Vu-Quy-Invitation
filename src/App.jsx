@@ -293,7 +293,7 @@ const Couple = ({ remoteConfig }) => {
             <div className="classic-date-divider"></div>
             <span className="classic-date-side">{eventData.year}</span>
           </div>
-          <p className="classic-lunar">(TỨC NGÀY {eventData.lunarDate.toUpperCase()})</p>
+          <p className="classic-lunar">Nhằm ngày {eventData.lunarDate}</p>
         </div>
       </div>
     </section>
@@ -740,8 +740,8 @@ const BankInfo = () => {
     <section className="bank-info-section">
       <div className="container">
         <h2 data-aos="fade-up">
-          Gửi quà đến{" "}
-          <span style={{ display: "inline-block" }}>Cô dâu & Chú rể</span>
+          Gửi quà đến <br className="mobile-break" />
+          Cô dâu & Chú rể
         </h2>
         <div className="bank-grid">
           <div className="bank-card card" data-aos="flip-left">

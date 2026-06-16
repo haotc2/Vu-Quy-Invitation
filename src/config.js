@@ -25,7 +25,7 @@ export const config = {
   weddingDate: "2026-11-29T18:00:00", // Using 2026 to keep countdown active
   events: [
     {
-      title: "TIỆC CƯỚI NHÀ GÁI",
+      title: "HÔN LỄ NHÀ GÁI",
       location: "GOLDEN LOTUS",
       address: "105B Đ. Hà Huy Giáp, Phường Trấn Biên, Đồng Nai",
       time: "11:00",
@@ -50,10 +50,10 @@ export const config = {
     },
   ],
   timeline: [
-    { time: "17:00", description: "Đón khách và chụp ảnh" },
-    { time: "18:00", description: "Làm lễ" },
-    { time: "18:30", description: "Khai tiệc" },
-    { time: "21:00", description: "Tung hoa và kết tiệc" },
+    { time: "12:00", description: "Đón khách và chụp ảnh" },
+    { time: "13:00", description: "Làm lễ" },
+    { time: "13:30", description: "Khai tiệc" },
+    { time: "15:00", description: "Tung hoa và kết tiệc" },
   ],
   gallery: [],
   bankInfo: {
