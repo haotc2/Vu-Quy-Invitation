@@ -50,7 +50,7 @@ export const config = {
     },
   ],
   timeline: [
-    { time: "12:00", description: "Đón khách và chụp ảnh" },
+    { time: "11:00", description: "Đón khách và chụp ảnh" },
     { time: "13:00", description: "Làm lễ" },
     { time: "13:30", description: "Khai tiệc" },
     { time: "15:00", description: "Tung hoa và kết tiệc" },
