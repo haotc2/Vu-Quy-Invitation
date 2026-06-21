@@ -149,8 +149,7 @@ const getDirectLink = (url, width = 1200) => {
  */
 const Hero = ({ remoteConfig }) => {
   const mainEvent = React.useMemo(() => {
-    const groomEvent = config.events.find((ev) => ev.title.includes("NHÀ GÁI"));
-    return groomEvent || config.events[0];
+    return config.events[0];
   }, []);
 
   const [day, month, year] = mainEvent.dayMonth
@@ -226,6 +225,22 @@ const Couple = ({ remoteConfig }) => {
   const eventData = config.events[0];
   const [day, month] = eventData.dayMonth.split('/');
 
+  const formatAddress = (address) => {
+    if (!address) return address;
+    const parts = address.split(',');
+    if (parts.length > 1) {
+      const lastPart = parts.pop();
+      return (
+        <>
+          {parts.join(',')},
+          <br className="mobile-break" />
+          {lastPart}
+        </>
+      );
+    }
+    return address;
+  };
+
   return (
     <section className="couple bg-white">
       <div className="container">
@@ -240,7 +255,7 @@ const Couple = ({ remoteConfig }) => {
               <span className="classic-parent-title">Ông Bà</span>
               <p className="classic-parent-name">{groomFather}</p>
               <p className="classic-parent-name">{groomMother}</p>
-              <p className="classic-parent-address">{groomAddress}</p>
+              <p className="classic-parent-address">{formatAddress(groomAddress)}</p>
             </div>
 
             <div className="classic-divider-line"></div>
@@ -249,7 +264,7 @@ const Couple = ({ remoteConfig }) => {
               <span className="classic-parent-title">Ông Bà</span>
               <p className="classic-parent-name">{brideFather}</p>
               <p className="classic-parent-name">{brideMother}</p>
-              <p className="classic-parent-address">{brideAddress}</p>
+              <p className="classic-parent-address">{formatAddress(brideAddress)}</p>
             </div>
           </div>
 
@@ -413,7 +428,7 @@ const Events = ({ remoteConfig }) => {
   return (
     <div className="events-container-new">
       {config.events
-        .filter((ev) => ev.title.includes("NHÀ GÁI"))
+        .filter((ev, index) => index === 0)
         .map((event) => {
           const originalIdx = config.events.indexOf(event);
           const [day, month] = event.dayMonth.split("/");
@@ -551,7 +566,6 @@ const Countdown = ({ remoteConfig }) => {
         >
           <div className="countdown-content-new">
             <p className="countdown-subtitle-new">CÙNG ĐẾM NGƯỢC THỜI GIAN</p>
-            <h2 className="countdown-title-new">Save The Date</h2>
 
             <div className="countdown-grid-new-banner">
               {["days", "hours", "minutes", "seconds"].map((unit, index) => {
@@ -834,10 +848,10 @@ function App() {
 
       // Add timeline icons
       const timelineIcons = [
-        "/Vu Quy Invitation/public/gate-2.png",
-        "/wedding-invitation/nhan-cuoi-2.png",
-        "/wedding-invitation/ly-2.png",
-        "/wedding-invitation/hoa-cam-tay-2.png",
+        "/gate-2.png",
+        "/nhan-cuoi-2.png",
+        "/ly-2.png",
+        "/hoa-cam-tay-2.png",
       ];
       timelineIcons.forEach(icon => urls.push(`${import.meta.env.BASE_URL}${icon.startsWith('/') ? icon.slice(1) : icon}`));
 
@@ -977,7 +991,7 @@ function App() {
             data-aos-delay="200"
             style={{ color: "rgba(255,255,255,0.9)" }}
           >
-            Sự hiện diện của bạn sẽ khiến hôn lễ của chúng tôi trở nên ý nghĩa
+            Sự hiện diện của quý khách sẽ khiến hôn lễ của chúng tôi trở nên ý nghĩa
             hơn bao giờ hết!
           </p>
         </div>
